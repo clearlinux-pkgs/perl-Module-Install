@@ -4,7 +4,7 @@
 #
 Name     : perl-Module-Install
 Version  : 1.19
-Release  : 4
+Release  : 5
 URL      : http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz
 Summary  : 'Standalone, extensible Perl module installer'
