@@ -4,14 +4,13 @@
 #
 Name     : perl-Module-Install
 Version  : 1.19
-Release  : 5
+Release  : 6
 URL      : http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz
 Summary  : 'Standalone, extensible Perl module installer'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Module-Install-doc
-BuildRequires : perl(Module::Build)
+BuildRequires : buildreq-cpan
 BuildRequires : perl(Module::ScanDeps)
 BuildRequires : perl(YAML::Tiny)
 
@@ -21,12 +20,13 @@ Module::Install - Standalone, extensible Perl module installer
 SYNOPSIS
 In your Makefile.PL: (Recommended Usage)
 
-%package doc
-Summary: doc components for the perl-Module-Install package.
-Group: Documentation
+%package dev
+Summary: dev components for the perl-Module-Install package.
+Group: Development
+Provides: perl-Module-Install-devel = %{version}-%{release}
 
-%description doc
-doc components for the perl-Module-Install package.
+%description dev
+dev components for the perl-Module-Install package.
 
 
 %prep
@@ -48,9 +48,9 @@ fi
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -59,46 +59,65 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Module/AutoInstall.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install.pod
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/API.pod
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/Bundle.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/Compiler.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/Find.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/Include.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/Makefile.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/Manifest.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/Metadata.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/ScanDeps.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Admin/WriteAll.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/AutoInstall.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Base.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Bundle.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Can.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Compiler.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/DSL.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Deprecated.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/External.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/FAQ.pod
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Fetch.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Include.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Inline.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/MakeMaker.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Makefile.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Metadata.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/PAR.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Philosophy.pod
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Run.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Scripts.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Share.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/Win32.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/With.pm
-/usr/lib/perl5/site_perl/5.26.1/Module/Install/WriteAll.pm
-/usr/lib/perl5/site_perl/5.26.1/inc/Module/Install.pm
-/usr/lib/perl5/site_perl/5.26.1/inc/Module/Install/DSL.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/AutoInstall.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install.pod
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/API.pod
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/Bundle.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/Compiler.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/Find.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/Include.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/Makefile.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/Manifest.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/Metadata.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/ScanDeps.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Admin/WriteAll.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/AutoInstall.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Base.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Bundle.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Can.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Compiler.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/DSL.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Deprecated.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/External.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/FAQ.pod
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Fetch.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Include.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Inline.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/MakeMaker.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Makefile.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Metadata.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/PAR.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Philosophy.pod
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Run.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Scripts.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Share.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/Win32.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/With.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Module/Install/WriteAll.pm
+/usr/lib/perl5/vendor_perl/5.26.1/inc/Module/Install.pm
+/usr/lib/perl5/vendor_perl/5.26.1/inc/Module/Install/DSL.pm
 
-%files doc
+%files dev
 %defattr(-,root,root,-)
-%doc /usr/share/man/man3/*
+/usr/share/man/man3/Module::AutoInstall.3
+/usr/share/man/man3/Module::Install.3
+/usr/share/man/man3/Module::Install::API.3
+/usr/share/man/man3/Module::Install::Admin.3
+/usr/share/man/man3/Module::Install::Admin::Include.3
+/usr/share/man/man3/Module::Install::Admin::Manifest.3
+/usr/share/man/man3/Module::Install::Base.3
+/usr/share/man/man3/Module::Install::Bundle.3
+/usr/share/man/man3/Module::Install::Can.3
+/usr/share/man/man3/Module::Install::Compiler.3
+/usr/share/man/man3/Module::Install::Deprecated.3
+/usr/share/man/man3/Module::Install::External.3
+/usr/share/man/man3/Module::Install::FAQ.3
+/usr/share/man/man3/Module::Install::Makefile.3
+/usr/share/man/man3/Module::Install::PAR.3
+/usr/share/man/man3/Module::Install::Philosophy.3
+/usr/share/man/man3/Module::Install::Share.3
+/usr/share/man/man3/Module::Install::With.3
+/usr/share/man/man3/inc::Module::Install.3
+/usr/share/man/man3/inc::Module::Install::DSL.3
