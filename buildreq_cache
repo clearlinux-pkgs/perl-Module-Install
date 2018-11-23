@@ -1,3 +1,4 @@
 1.19
+perl(Module::Build)
 perl(Module::ScanDeps)
 perl(YAML::Tiny)
