@@ -4,7 +4,7 @@
 #
 Name     : perl-Module-Install
 Version  : 1.19
-Release  : 19
+Release  : 20
 URL      : http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Module-Install-1.19.tar.gz
 Summary  : 'Standalone, extensible Perl module installer'
@@ -98,42 +98,42 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/Module/AutoInstall.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install.pod
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/API.pod
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/Bundle.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/Compiler.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/Find.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/Include.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/Makefile.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/Manifest.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/Metadata.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/ScanDeps.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Admin/WriteAll.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/AutoInstall.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Base.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Bundle.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Can.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Compiler.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/DSL.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Deprecated.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/External.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/FAQ.pod
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Fetch.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Include.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Inline.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/MakeMaker.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Makefile.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Metadata.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/PAR.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Philosophy.pod
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Run.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Scripts.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Share.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/Win32.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/With.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Module/Install/WriteAll.pm
-/usr/lib/perl5/vendor_perl/5.32.1/inc/Module/Install.pm
-/usr/lib/perl5/vendor_perl/5.32.1/inc/Module/Install/DSL.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/AutoInstall.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install.pod
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/API.pod
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/Bundle.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/Compiler.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/Find.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/Include.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/Makefile.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/Manifest.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/Metadata.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/ScanDeps.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Admin/WriteAll.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/AutoInstall.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Base.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Bundle.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Can.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Compiler.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/DSL.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Deprecated.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/External.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/FAQ.pod
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Fetch.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Include.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Inline.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/MakeMaker.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Makefile.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Metadata.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/PAR.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Philosophy.pod
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Run.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Scripts.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Share.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/Win32.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/With.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Module/Install/WriteAll.pm
+/usr/lib/perl5/vendor_perl/5.34.0/inc/Module/Install.pm
+/usr/lib/perl5/vendor_perl/5.34.0/inc/Module/Install/DSL.pm
